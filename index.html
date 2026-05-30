@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Angkringan Bang Sadtrio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff;
+
+    background:#0f172a;
+}
+
+/* ==========================
+BACKGROUND
+========================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(168,85,247,.25),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(236,72,153,.15),
+    transparent 35%);
+
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    z-index:-1;
+}
+
+/* ==========================
+SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#9333ea;
+    border-radius:999px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+/* ==========================
+HEADER
+========================== */
+
+header{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:2px solid #a855f7;
+
+    box-shadow:
+    0 0 15px rgba(168,85,247,.8),
+    0 0 30px rgba(168,85,247,.3);
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* overlay tipis */
+
+.hero-overlay{
+    background:
+    linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.35)
+    );
+}
+
+/* ==========================
+FOTO PROFIL
+========================== */
+
+header img{
+    border:4px solid #fff !important;
+
+    box-shadow:
+    0 0 0 5px rgba(168,85,247,.5),
+    0 0 20px #a855f7,
+    0 0 40px #a855f7,
+    0 0 60px #a855f7;
+}
+
+/* ==========================
+JUDUL
+========================== */
+
+header h1{
+    color:#fff;
+    font-weight:900;
+
+    text-shadow:
+    0 2px 10px rgba(0,0,0,.8);
+}
+
+/* ==========================
+JAM LIVE
+========================== */
+
+.absolute.top-3.left-4{
+    background:rgba(25,0,45,.85)!important;
+
+    border:1px solid rgba(217,70,239,.5);
+
+    box-shadow:
+    0 0 15px rgba(217,70,239,.5);
+}
+
+#liveClock{
+    color:#d946ef;
+
+    font-weight:800;
+
+    text-shadow:
+    0 0 10px #d946ef,
+    0 0 20px #d946ef,
+    0 0 30px #d946ef;
+}
+
+/* ==========================
+BADGE
+========================== */
+
+.badge-glow{
+    background:
+    linear-gradient(
+    90deg,
+    #7e22ce,
+    #a855f7,
+    #d946ef
+    );
+
+    color:#fff;
+
+    font-weight:700;
+
+    border-radius:999px;
+
+    box-shadow:
+    0 0 15px rgba(217,70,239,.8);
+}
+
+/* ==========================
+MARQUEE
+========================== */
+
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+.animate-marquee{
+    display:flex;
+    width:max-content;
+    white-space:nowrap;
+
+    animation:marquee 25s linear infinite;
+
+    background:rgba(0,0,0,.45);
+
+    padding:6px 14px;
+
+    border-radius:999px;
+}
+
+/* ==========================
+CARD PREMIUM
+========================== */
+
+.modern-card{
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.35);
+
+    transition:.3s;
+}
+
+.modern-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 40px rgba(168,85,247,.25);
+}
+
+/* ==========================
+INPUT
+========================== */
+
+.input-modern{
+    width:100%;
+
+    padding:14px 16px;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    color:white;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.input-modern::placeholder{
+    color:rgba(255,255,255,.65);
+}
+
+.input-modern:focus{
+    border-color:#a855f7;
+
+    box-shadow:
+    0 0 0 2px rgba(168,85,247,.25),
+    0 0 20px rgba(168,85,247,.35);
+}
+
+/* ==========================
+BUTTON
+========================== */
+
+.btn-modern{
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:700;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+    background:
+    linear-gradient(
+    90deg,
+    #7e22ce,
+    #9333ea,
+    #d946ef
+    );
+
+    box-shadow:
+    0 10px 25px rgba(168,85,247,.35);
+}
+
+.btn-modern:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 15px 35px rgba(168,85,247,.55);
+}
+
+/* ==========================
+MENU CARD
+========================== */
+
+#menuList .modern-card{
+    overflow:hidden;
+}
+
+#menuList img{
+    transition:.4s;
+}
+
+#menuList .modern-card:hover img{
+    transform:scale(1.08);
+}
+
+/* ==========================
+KERANJANG
+========================== */
+
+#cart > div{
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    padding:12px;
+}
+
+#total{
+    color:#22c55e;
+}
+
+/* ==========================
+TABLE ADMIN
+========================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+th{
+    background:
+    rgba(255,255,255,.08);
+}
+
+th,td{
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    padding:12px;
+}
+
+/* ==========================
+STATUS TOKO
+========================== */
+
+#openStatus{
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+/* ==========================
+MAP
+========================== */
+
+img{
+    max-width:100%;
+}
+
+a img{
+    transition:.3s;
+}
+
+a img:hover{
+    transform:scale(1.03);
+}
+
+/* ==========================
+LOADING
+========================== */
+
+.loading-spinner{
+    width:22px;
+    height:22px;
+
+    border:
+    3px solid rgba(255,255,255,.3);
+
+    border-top:
+    3px solid #fff;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ==========================
+WATERMARK
+========================== */
+
+.fixed.bottom-3.right-3 div{
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    header{
+        border-radius:16px;
+    }
+
+    .modern-card{
+        border-radius:18px;
+    }
+
+    h1{
+        font-size:30px !important;
+    }
+
+    h2{
+        font-size:22px !important;
+    }
+
+    .btn-modern{
+        width:100%;
+    }
+
+}
+
+/* =========================
+VISI MISI PREMIUM
+========================= */
+
+.visi-misi-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+.visi-card,
+.misi-card{
+  position:relative;
+  overflow:hidden;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  border-radius:24px;
+
+  padding:28px;
+
+  color:#fff;
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,.35);
+
+  transition:.4s;
+}
+
+.visi-card:hover,
+.misi-card:hover{
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 20px 50px rgba(168,85,247,.35);
+}
+
+/* efek glow */
+.visi-card::before,
+.misi-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(168,85,247,.18),
+    transparent 60%
+  );
+
+  pointer-events:none;
+}
+
+/* heading */
+.visi-card h3,
+.misi-card h3{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:24px;
+  font-weight:800;
+
+  margin-bottom:18px;
+}
+
+/* warna heading */
+.visi-card h3{
+  color:#f59e0b;
+}
+
+.misi-card h3{
+  color:#60a5fa;
+}
+
+/* isi teks */
+.visi-card p{
+  color:#e5e7eb;
+  line-height:1.9;
+  font-size:15px;
+}
+
+/* list misi */
+.misi-card ul{
+  margin:0;
+  padding-left:20px;
+}
+
+.misi-card li{
+  color:#e5e7eb;
+  margin-bottom:12px;
+  line-height:1.8;
+}
+
+/* quote */
+.quote-angkringan{
+  margin-top:30px;
+  text-align:center;
+
+  color:#c084fc;
+  font-style:italic;
+
+  font-size:15px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(10px);
+}
+
+/* mobile */
+@media(max-width:768px){
+
+  .visi-card,
+  .misi-card{
+    padding:22px;
+  }
+
+  .visi-card h3,
+  .misi-card h3{
+    font-size:20px;
+  }
+
+}
+
+</style>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-fixed"
+style="background-image: url('https://explicit-azure-v85zgfgc.edgeone.app/ChatGPT%20Image%20May%2031,%202026,%2005_03_57%20AM.png');">
+
+<!-- ================= HEADER ================= -->
+
+<header
+  class="relative text-white shadow-2xl bg-cover bg-center rounded-b-3xl overflow-hidden max-w-7xl mx-auto mt-4"
+  style="
+    background-image: url('https://explicit-azure-v85zgfgc.edgeone.app/ChatGPT%20Image%20May%2031,%202026,%2005_03_57%20AM.png');
+    background-position: center;
+    min-height: 220px;
+  "
+>
+
+  <!-- JAM LIVE -->
+  <div class="absolute top-3 left-4 text-xs md:text-sm font-bold bg-black/40 px-3 py-1 rounded-full backdrop-blur">
+    🕒 <span id="liveClock">00:00:00</span>
+  </div>
+
+  <div class="hero-overlay h-full px-6 py-6 md:py-8 flex items-center">
+    <div class="w-full flex flex-col items-center">
+
+      <img
+        src="https://cdn.corenexis.com/files/c/1912512720.jpg"
+        class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-2xl object-cover mb-3"
+      />
+
+      <div class="badge-glow px-4 py-1 rounded-full text-xs font-semibold mb-2">
+        BAKULE GANTENG
+      </div>
+
+      <h1 class="text-2xl md:text-4xl font-extrabold text-center">
+        Angkringan Bang Sadtrio
+      </h1>
+
+      <div class="w-full overflow-hidden mt-3">
+
+        <div class="mt-2 text-xs font-bold">
+          ⏰ Jam Operasional: <span id="hoursText">-</span>
+        </div>
+
+        <div id="openStatus" class="text-xs font-bold mt-1"></div>
+
+        <div class="animate-marquee text-xs md:text-sm font-medium text-amber-200 flex gap-10 whitespace-nowrap">
+          <span>
+            | Sistem Penjualan Makanan & Minuman | Pesan Mudah via WhatsApp |
+          </span>
+          <span>
+            | Sistem Penjualan Makanan & Minuman | Pesan Mudah via WhatsApp |
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ================= TOMBOL ADMIN ================= -->
+<div class="max-w-7xl mx-auto px-6 pt-6 text-right">
+  <button
+    onclick="toggleAdminLogin()"
+    class="btn-modern bg-slate-800 hover:bg-slate-900 text-white px-4 py-2"
+  >
+    🔐 Admin
+  </button>
+</div>
+
+<!-- ================= LOGIN ADMIN ================= -->
+<div id="adminLoginBox" class="max-w-md mx-auto px-6 pt-4 hidden">
+  <div class="modern-card p-6">
+    <h2 class="text-xl font-bold mb-4">Login Admin</h2>
+
+    <input
+      type="text"
+      id="adminUsername"
+      placeholder="Username"
+      class="w-full input-modern"
+    />
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Password"
+      class="w-full input-modern"
+    />
+
+    <button
+      onclick="loginAdmin()"
+      class="btn-modern w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+    >
+      Login
+    </button>
+  </div>
+</div>
+
+<!-- ================= KONTEN UTAMA ================= -->
+<div class="max-w-7xl mx-auto p-6 grid lg:grid-cols-3 gap-6">
+
+
+
+  <!-- MENU -->
+  <div class="lg:col-span-2 modern-card p-6">
+    <h2 class="text-2xl font-bold mb-4">🍢 Daftar Menu</h2>
+    <!-- 🔽 FILTER KATEGORI -->
+<div class="flex gap-2 mb-4 flex-wrap">
+  <button onclick="setFilter('all')" class="btn-modern bg-gray-800 text-white px-3 py-1">
+    Semua
+  </button>
+
+  <button onclick="setFilter('Makanan')" class="btn-modern bg-amber-600 text-white px-3 py-1">
+    Makanan
+  </button>
+
+  <button onclick="setFilter('Minuman')" class="btn-modern bg-blue-600 text-white px-3 py-1">
+    Minuman
+  </button>
+</div>
+    <div id="menuList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+
+<!-- ================= KERANJANG ================= -->
+<div class="modern-card p-6">
+  <h2 class="text-2xl font-bold mb-4">🛒 Keranjang</h2>
+
+  <!-- LIST KERANJANG -->
+  <div id="cart" class="space-y-3 text-sm"></div>
+
+  <hr class="my-4">
+
+  <!-- TOTAL -->
+  <p class="text-lg font-bold mb-4">
+    Total: Rp <span id="total">0</span>
+  </p>
+
+  <!-- METODE PESANAN -->
+<div class="mb-4">
+
+  <label class="block text-sm font-semibold mb-2">
+    🚚 Metode Pesanan
+  </label>
+
+  <select
+    id="orderMethod"
+    onchange="toggleOrderForm()"
+    class="w-full input-modern"
+  >
+    <option value="">Pilih Metode</option>
+    <option value="Ambil Nanti">🏪 Ambil Nanti</option>
+    <option value="Dikirim">🚚 Dikirim</option>
+  </select>
+
+</div>
+
+<!-- FORM CUSTOMER -->
+<div id="customerForm" style="display:none;">
+
+  <label class="block text-sm font-semibold mb-2">
+    Nama Pembeli
+  </label>
+
+  <input
+    type="text"
+    id="customerName"
+    placeholder="Masukkan nama pembeli"
+    class="w-full input-modern"
+  />
+
+  <label class="block text-sm font-semibold mb-2 mt-3">
+    Nomor WhatsApp
+  </label>
+
+  <input
+    type="text"
+    id="customerPhone"
+    placeholder="Contoh: 0812xxxxxxx"
+    class="w-full input-modern"
+  />
+
+
+  <!-- ALAMAT PENGIRIMAN -->
+<div id="addressBox" style="display:none;">
+
+  <label class="block text-sm font-semibold mb-2 mt-3">
+    📍 Alamat Pengiriman
+  </label>
+
+  <textarea
+    id="customerAddress"
+    placeholder="Masukkan alamat lengkap pengiriman"
+    class="w-full input-modern"
+  ></textarea>
+
+</div>
+
+  <textarea
+    id="customerChat"
+    placeholder="Chat"
+    class="w-full input-modern"
+  ></textarea>
+
+</div>
+
+
+
+  <!-- CHECKOUT -->
+  <button
+  id="checkoutBtn"
+  onclick="checkoutWA()"
+  disabled
+  class="btn-modern bg-gray-400 text-white py-3 w-full font-bold cursor-not-allowed"
+>
+  Kirim Pesanan via WhatsApp
+</button>
+</div>
+
+<!-- ================= VISI MISI ================= -->
+<div class="visi-misi-wrapper">
+
+  <div class="visi-card">
+    <h3>Visi</h3>
+    <p>
+      Menjadi angkringan terbaik yang menghadirkan makanan dan minuman khas
+      dengan rasa autentik, harga terjangkau, serta pelayanan ramah
+      untuk semua kalangan.
+    </p>
+  </div>
+
+  <div class="misi-card">
+    <h3>Misi</h3>
+
+    <ul>
+      <li>Menyediakan makanan & minuman berkualitas setiap hari.</li>
+      <li>Menjaga kebersihan dan kenyamanan tempat.</li>
+      <li>Memberikan pelayanan cepat, ramah, dan jujur.</li>
+      <li>Menghadirkan harga yang selalu terjangkau untuk semua kalangan.</li>
+      <li>Mengembangkan usaha berbasis digital dan WhatsApp order.</li>
+    </ul>
+  </div>
+</div>
+<div class="quote-angkringan">
+  “Sederhana rasanya, hangat suasananya, bikin kangen tiap malam.”
+</div>
+</div>
+
+
+
+<!-- ================= LOKASI MAP ================= -->
+<div class="max-w-7xl mx-auto px-6 pb-6">
+  <div class="modern-card overflow-hidden">
+    
+    <!-- Judul -->
+    <div class="p-6 pb-4">
+      <h2 class="text-2xl font-bold mb-2">📍 Lokasi Angkringan</h2>
+      <p class="text-gray-500 text-sm">
+        Jl. Jagalan, dekat Bella Bening Beauty
+      </p>
+    </div>
+
+    <!-- Gambar Map -->
+    <a
+      href="https://cdn.corenexis.com/files/c/9522252720.jpg"
+      target="_blank"
+      class="block px-6 pb-6"
+    >
+      <img
+        src="https://cdn.corenexis.com/files/c/9522252720.jpg"
+        alt="Lokasi Angkringan Bang Sadtrio"
+        class="w-full h-72 object-cover rounded-2xl border border-gray-200 shadow hover:scale-[1.02] transition duration-300"
+      />
+    </a>
+
+    <!-- Pencetan Map -->
+    <div class="px-6 pb-6">
+      <a
+        href="https://maps.app.goo.gl/FH7Z5JEwQ1mi6uRf8?g_st=com.google.maps.preview.copy"
+        target="_blank"
+        class="btn-modern block text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
+      >
+        📍 Buka di Google Maps
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= DASHBOARD ADMIN ================= -->
+<div id="adminSection" class="max-w-7xl mx-auto px-6 pb-10 hidden"><hr class="my-6">
+
+<!-- NAVIGASI ORDER -->
+<div class="flex gap-2 mb-4">
+
+  <button
+    onclick="showOrderPage('active')"
+    class="btn-modern bg-blue-600 text-white px-4 py-2"
+  >
+    📦 Order Aktif
+  </button>
+
+  <button
+    onclick="showOrderPage('done')"
+    class="btn-modern bg-green-600 text-white px-4 py-2"
+  >
+    ✅ Riwayat Selesai
+  </button>
+
+</div>
+
+<!-- HALAMAN ORDER AKTIF -->
+<div id="activePage">
+
+  <h2 class="text-xl font-bold mb-3">
+    📦 Order Aktif
+  </h2>
+
+  <div id="orderList" class="space-y-4"></div>
+
+</div>
+
+<!-- HALAMAN ORDER SELESAI -->
+<div id="donePage" style="display:none;">
+
+  <h2 class="text-xl font-bold mb-3">
+    ✅ Riwayat Order Selesai
+  </h2>
+
+  <div id="orderDoneList" class="space-y-4"></div>
+
+</div>
+  <div class="modern-card p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold">⚙️ Dashboard Admin</h2>
+      <button
+        onclick="logoutAdmin()"
+        class="btn-modern bg-red-600 hover:bg-red-700 text-white px-4 py-2"
+      >
+        Logout
+      </button>
+    </div>
+
+<div class="mb-4 grid grid-cols-2 gap-2">
+  <input id="openHour" type="time" class="input-modern" />
+  <input id="closeHour" type="time" class="input-modern" />
+</div>
+
+<button
+  onclick="saveHours()"
+  class="btn-modern bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 mb-4 w-full"
+>
+  💾 Simpan Jam Operasional
+</button>
+
+    <!-- FORM TAMBAH MENU -->
+    <div class="grid md:grid-cols-6 gap-4 mb-6">
+      
+      <input id="newName" type="text" placeholder="Nama Menu" class="input-modern" />
+      <select id="newCategory" class="input-modern">
+  <option value="Makanan">🍢 Makanan</option>
+  <option value="Minuman">🥤 Minuman</option>
+</select>
+      <input id="newPrice" type="number" placeholder="Harga" class="input-modern" />
+      <input id="newStock" type="number" placeholder="Stok" class="input-modern" />
+      <input id="newImage" type="text" placeholder="URL Foto Produk" class="input-modern" />
+
+      <button
+        onclick="addMenu()"
+        class="btn-modern bg-blue-600 hover:bg-blue-700 text-white px-4 py-3"
+      >
+        Tambah Menu
+      </button>
+    </div>
+
+    <!-- TABEL ADMIN -->
+    <div class="overflow-x-auto">
+      <table class="w-full border text-sm">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border p-2">Menu</th>
+            <th class="border p-2">Harga</th>
+            <th class="border p-2">Stok</th>
+            <th class="border p-2">Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="adminTable"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// ================= KONFIGURASI =================
+const API_URL =
+"https://script.google.com/macros/s/AKfycbyO9zX6NKgdXz3RLsxJx92fMHWMvBXbK7EPy2UfqgfwFobdFrsJh03XJGc249v0Xf8EHg/exec";
+
+const WHATSAPP_NUMBER = "6285181309503";
+
+
+// ================= DATA MENU =================
+let menu = [];
+async function loadMenu() {
+  try {
+
+    const res = await fetch(API_URL + "?action=menu");
+
+    console.log("STATUS:", res.status);
+
+    const text = await res.text();
+
+    console.log("RAW MENU:", text);
+
+    menu = JSON.parse(text);
+
+    renderMenu();
+
+    if (sessionStorage.getItem("adminLoggedIn") === "true") {
+      renderAdmin();
+    }
+
+  } catch (err) {
+    console.error("LOAD MENU ERROR:", err);
+    alert("Gagal memuat menu");
+  }
+}
+
+let cart = [];
+let orders = [];
+async function loadOrders(){
+
+  const res =
+  await fetch(API_URL + "?action=orders");
+
+  orders =
+  await res.json();
+
+  renderOrders();
+
+}
+
+let currentFilter = "all";
+
+// ================= JAM OPERASIONAL =================
+let openHour = "12:00";
+let closeHour = "05:00";
+
+async function loadConfig(){
+
+  const res =
+  await fetch(API_URL + "?action=config");
+
+  const data =
+  await res.json();
+
+  openHour = data.open;
+  closeHour = data.close;
+
+  renderHours();
+
+}
+
+async function saveHours(){
+
+  const open =
+  document.getElementById("openHour").value;
+
+  const close =
+  document.getElementById("closeHour").value;
+
+  await fetch(API_URL,{
+    method:"POST",
+    body:JSON.stringify({
+      action:"saveHours",
+      open,
+      close
+    })
+  });
+
+  openHour = open;
+  closeHour = close;
+
+  renderHours();
+
+  alert("Jam operasional disimpan");
+
+}
+
+function renderHours() {
+  document.getElementById("hoursText").innerText =
+    `${openHour} - ${closeHour}`;
+
+  // 🔥 isi otomatis ke input admin
+  document.getElementById("openHour").value = openHour;
+  document.getElementById("closeHour").value = closeHour;
+
+  updateStoreStatus();
+}
+
+function isStoreOpen() {
+
+  const now = new Date();
+
+  const current =
+    now.getHours() * 60 +
+    now.getMinutes();
+
+  const [oh, om] =
+    openHour.split(":").map(Number);
+
+  const [ch, cm] =
+    closeHour.split(":").map(Number);
+
+  const open =
+    oh * 60 + om;
+
+  const close =
+    ch * 60 + cm;
+
+  // normal
+  if (open < close) {
+    return current >= open &&
+           current <= close;
+  }
+
+  // melewati tengah malam
+  return current >= open ||
+         current <= close;
+}
+
+function updateStoreStatus() {
+  const el = document.getElementById("openStatus");
+
+  if (isStoreOpen()) {
+    el.innerHTML = "🟢 BUKA";
+    el.className = "text-xs font-bold text-green-400 mt-1";
+  } else {
+    el.innerHTML = "🔴 TUTUP";
+    el.className = "text-xs font-bold text-red-400 mt-1";
+  }
+
+  renderMenu();
+}
+
+// ================= UTILITAS =================
+
+function formatRupiah(num) {
+  return new Intl.NumberFormat("id-ID").format(num);
+}
+
+function setFilter(cat){
+  currentFilter = cat;
+  renderMenu();
+}
+
+// ================= LOGIN ADMIN =================
+function toggleAdminLogin() {
+  document.getElementById("adminLoginBox").classList.toggle("hidden");
+}
+
+async function loginAdmin(){
+
+  const username =
+  document.getElementById("adminUsername").value.trim();
+
+  const password =
+  document.getElementById("adminPassword").value.trim();
+
+  const res = await fetch(
+    `${API_URL}?action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+  );
+
+  const data = await res.json();
+
+  if(data.success){
+
+    sessionStorage.setItem(
+      "adminLoggedIn",
+      "true"
+    );
+
+    document.getElementById("adminLoginBox")
+      .classList.add("hidden");
+
+    document.getElementById("adminSection")
+      .classList.remove("hidden");
+
+    renderAdmin();
+    loadOrders();
+    showOrderPage("active");
+    alert("Login berhasil");
+
+  }else{
+
+    alert("Username atau Password salah");
+
+  }
+
+}
+
+function logoutAdmin() {
+  sessionStorage.removeItem("adminLoggedIn");
+  document.getElementById("adminSection").classList.add("hidden");
+  alert("Logout berhasil.");
+}
+
+// ================= MENU =================
+function renderMenu() {
+  const menuList = document.getElementById("menuList");
+  menuList.innerHTML = "";
+
+  menu.forEach((item, index) => {
+    if (currentFilter !== "all" && item.category !== currentFilter) return;
+
+    const habis = item.stock <= 0;
+
+    menuList.innerHTML += `
+      <div class="modern-card overflow-hidden">
+        <img src="${item.image}" class="w-full h-40 object-cover" />
+
+        <div class="p-4">
+          <div class="text-xs text-gray-500 mb-1">${item.category}</div>
+
+          <h3 class="font-bold text-lg">${item.name}</h3>
+
+          <p class="text-gray-600 mt-1">
+            Rp ${formatRupiah(item.price)}
+          </p>
+
+          <p class="text-sm mt-1">
+            Stok:
+            <span class="${habis ? 'text-red-600' : 'text-green-600'} font-bold">
+              ${item.stock}
+            </span>
+          </p>
+
+          <button
+            onclick="addToCart(${index})"
+            ${(!isStoreOpen() || habis) ? "disabled" : ""}
+            class="btn-modern mt-3 w-full py-2 text-white ${
+              !isStoreOpen()
+                ? "bg-gray-400 cursor-not-allowed"
+                : habis
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-amber-600 hover:bg-amber-700"
+            }"
+          >
+            ${
+              !isStoreOpen()
+                ? "Toko Tutup"
+                : habis
+                ? "Stok Habis"
+                : "Tambah"
+            }
+          </button>
+
+        </div>
+      </div>
+    `;
+  });
+}
+
+function addToCart(index) {
+  if (menu[index].stock <= 0) return alert("Stok habis.");
+  menu[index].stock = Math.max(0, menu[index].stock - 1);
+
+
+  const existing = cart.find(item => item.name === menu[index].name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({
+      name: menu[index].name,
+      price: menu[index].price,
+      qty: 1
+    });
+  }
+
+  renderMenu();
+  renderCart();
+  if (sessionStorage.getItem("adminLoggedIn") === "true") renderAdmin();
+  validateCheckoutForm();
+}
+
+
+// ================= KERANJANG =================
+function renderCart() {
+  const cartDiv = document.getElementById("cart");
+  const totalSpan = document.getElementById("total");
+
+  cartDiv.innerHTML = "";
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartDiv.innerHTML = `<p class="text-gray-500">Belum ada pesanan.</p>`;
+  }
+
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.qty;
+    total += subtotal;
+
+    cartDiv.innerHTML += `
+      <div class="border-b pb-2">
+        <div class="font-semibold">${item.name}</div>
+        <div>${item.qty} x Rp ${subtotal.toLocaleString("id-ID")}</div>
+        <div class="font-bold">Rp ${subtotal.toLocaleString("id-ID")}</div>
+        <button
+          onclick="removeItem(${index})"
+          class="text-red-600 text-xs mt-1"
+        >
+          Hapus
+        </button>
+      </div>
+    `;
+  });
+
+  totalSpan.textContent = formatRupiah(total);
+}
+
+function deleteOrder(id) {
+  if (!confirm("Hapus order ini?")) return;
+
+  orders = orders.filter(o => o.id !== id);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  renderOrders();
+}
+
+function renderOrders() {
+  const activeBox = document.getElementById("orderList");
+  const doneBox = document.getElementById("orderDoneList");
+
+  if (!activeBox || !doneBox) return;
+
+  activeBox.innerHTML = "";
+  doneBox.innerHTML = "";
+
+  orders.slice().reverse().forEach((o) => {
+
+    let itemsText = "";
+    o.items.forEach(i => {
+      itemsText += `• ${i.name} (${i.qty}x)\n`;
+    });
+
+    const card = `
+      <div class="modern-card p-4">
+
+        <div class="flex justify-between">
+          <div>
+            <h3 class="font-bold">${o.name}</h3>
+            <p class="text-xs text-gray-500">${o.time}</p>
+          </div>
+
+          <span class="text-xs px-2 py-1 rounded 
+          ${o.status === "PENDING" ? "bg-yellow-200" :
+            o.status === "DIPROSES" ? "bg-blue-200" :
+            "bg-green-200"}">
+            ${o.status}
+          </span>
+        </div>
+
+        <pre class="text-sm mt-2">${itemsText}</pre>
+
+        <p class="mt-2">
+  🚚 Metode:
+  <b>${o.method || "-"}</b>
+</p>
+
+${
+o.method === "Dikirim"
+?
+`
+<p class="text-sm mt-1">
+📍 ${o.address || "-"}
+</p>
+`
+:
+""
+}
+
+<p class="font-bold mt-2">
+  Total: Rp ${o.total.toLocaleString("id-ID")}
+</p>
+
+        <div class="flex gap-2 mt-3">
+
+          <button onclick="sendWA('${o.id}')"
+            class="bg-green-600 text-white px-3 py-1 rounded">
+            📤 Kirim WA
+          </button>
+
+          <button onclick="finishOrder('${o.id}')"
+            class="bg-blue-600 text-white px-3 py-1 rounded">
+            ✅ Selesai
+          </button>
+
+           <button onclick="chatCustomer('${o.phone}')"
+    class="bg-purple-600 text-white px-3 py-1 rounded">
+    💬 Customer
+  </button>
+
+          ${o.status === "SELESAI" ? `
+            <button onclick="deleteOrder(${o.id})"
+              class="bg-red-600 text-white px-3 py-1 rounded">
+              🗑 Hapus
+            </button>
+          ` : ""}
+
+        </div>
+
+      </div>
+    `;
+
+    if (o.status === "SELESAI") {
+      doneBox.innerHTML += card;
+    } else {
+      activeBox.innerHTML += card;
+    }
+  });
+}
+
+async function sendWA(id){
+
+  const order =
+  orders.find(o => String(o.id) === String(id));
+
+console.log("ORDER =", order);
+console.log("PHONE =", order.phone);
+console.log("TYPE =", typeof order.phone);
+
+  if(!order){
+    alert("Order tidak ditemukan");
+    return;
+  }
+
+  const phone = normalizePhone(order.phone);
+
+if (!phone) {
+  alert("Nomor customer tidak tersedia");
+  return;
+}
+
+  const customerMsg =
+`🍢 *ANGKRINGAN BANG SADTRIO*
+
+Halo ${order.name} 👋
+
+📦 Metode Pesanan:
+${order.method || "-"}
+
+📌 Pesanan Anda sedang diproses oleh Bang Sadtrio.
+
+⏳ Mohon tunggu sebentar ya.
+
+Terima kasih telah memesan ❤️`;
+
+const waUrl =
+`https://wa.me/${phone}?text=${encodeURIComponent(customerMsg)}`;
+
+  // buka WA dulu
+  window.open(waUrl, "_blank");
+
+  try{
+
+    await fetch(API_URL,{
+      method:"POST",
+      body:JSON.stringify({
+        action:"updateStatus",
+        id:id,
+        status:"DIPROSES"
+      })
+    });
+
+    loadOrders();
+
+  }catch(err){
+    console.error(err);
+  }
+}
+
+async function finishOrder(id){
+
+window.finishOrder = finishOrder;
+window.sendWA = sendWA;
+window.chatCustomer = chatCustomer;
+window.deleteOrder = deleteOrder;
+
+  const order =
+  orders.find(o => String(o.id) === String(id));
+
+  if(!order){
+    alert("Order tidak ditemukan");
+    return;
+  }
+
+  const phone = normalizePhone(order.phone);
+
+  if(!phone){
+    alert("Nomor customer tidak tersedia");
+    return;
+  }
+
+  const customerMsg =
+`🍢 *ANGKRINGAN BANG SADTRIO*
+
+Halo ${order.name} 👋
+
+📦 Metode Pesanan:
+${order.method || "-"}
+
+✅ Pesanan Anda sudah selesai.
+
+${
+order.method === "Dikirim"
+? "🚚 Pesanan akan segera dikirim ke alamat Anda."
+: "🏪 Pesanan sudah siap diambil."
+}
+
+🙏 Terima kasih telah memesan ❤️`;
+
+  const waUrl =
+`https://wa.me/${phone}?text=${encodeURIComponent(customerMsg)}`;
+
+  window.open(waUrl,"_blank");
+
+  try{
+
+    await fetch(API_URL,{
+      method:"POST",
+      body:JSON.stringify({
+        action:"updateStatus",
+        id:id,
+        status:"SELESAI"
+      })
+    });
+
+    loadOrders();
+
+  }catch(err){
+    console.error(err);
+  }
+}
+
+function removeItem(index) {
+  const item = cart[index];
+  const menuItem = menu.find(m => m.name === item.name);
+  if (menuItem) menuItem.stock += item.qty;
+
+  cart.splice(index, 1);
+
+
+  renderMenu();
+  renderCart();
+  if (sessionStorage.getItem("adminLoggedIn") === "true") renderAdmin();
+validateCheckoutForm();
+}
+
+function deleteOrder(id) {
+  if (!confirm("Hapus pesanan ini?")) return;
+
+  orders = orders.filter(o => o.id !== id);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  renderOrders();
+}
+
+// ================= CHECKOUT =================
+async function checkoutWA() {
+
+  const btn = document.getElementById("checkoutBtn");
+
+  if(btn && btn.disabled) return;
+
+  try {
+
+    if(btn){
+      btn.disabled = true;
+      btn.innerHTML = `
+        <div class="loading-spinner"></div>
+      `;
+    }
+
+    showLoading("Mengirim pesanan...");
+
+    const note =
+      document.getElementById("customerChat").value.trim();
+
+    const address =
+     document.getElementById("customerAddress")?.value.trim() || "-";
+
+    const phoneInput =
+      document.getElementById("customerPhone").value.trim();
+
+    const phone =
+      normalizePhone(phoneInput);
+
+    const name =
+      document.getElementById("customerName").value.trim();
+    
+    const method =
+document.getElementById("orderMethod").value;
+
+if(!method){
+  alert("Pilih metode pesanan.");
+  return;
+}
+
+    if (!phone) {
+      alert("Masukkan nomor WhatsApp.");
+      return;
+    }
+
+    if (!name) {
+      alert("Masukkan nama pembeli.");
+      return;
+    }
+
+    if(
+        method === "Dikirim" &&
+        address === "-"
+        ){
+        alert("Alamat pengiriman wajib diisi.");
+        return;
+        }
+
+    if (cart.length === 0) {
+      alert("Keranjang kosong.");
+      return;
+    }
+
+    let total = 0;
+    let itemsText = "";
+
+    cart.forEach(item => {
+
+      const subtotal =
+        item.price * item.qty;
+
+      total += subtotal;
+
+      itemsText +=
+        `• ${item.name} (${item.qty}x) = Rp ${subtotal.toLocaleString("id-ID")}\n`;
+
+    });
+
+    const order = {
+  id: Date.now(),
+  name,
+  phone,
+  method,
+  address,
+  items: [...cart],
+  total,
+  status: "PENDING",
+  time: new Date().toLocaleString(),
+  note: note || "-"
+};
+
+    await fetch(API_URL,{
+      method:"POST",
+      body:JSON.stringify({
+        action:"createOrder",
+        ...order
+      })
+    });
+
+    const adminMsg =
+`📋 *STRUK ANGKRINGAN*
+
+👤 Nama: ${name}
+📱 No: ${phone}
+🚚 Metode: ${order.method || "-"}
+
+📍 Alamat:
+${order.address || "-"}
+
+🍢 DETAIL PESANAN:
+${itemsText}
+
+💬 Chat:
+${note || "-"}
+
+💰 TOTAL: Rp ${total.toLocaleString("id-ID")}
+
+🔥 Status: PENDING`;
+
+    const customerMsg =
+`🍢 *ANGKRINGAN BANG SADTRIO*
+
+📦 Metode Pesanan:
+${order.method || "-"}
+
+Halo ${name} 👋
+
+Pesanan kamu sudah diterima.
+
+🍢 DETAIL:
+${itemsText}
+
+💬 Chat:
+${note || "-"}
+
+💰 TOTAL: Rp ${total.toLocaleString("id-ID")}
+
+Terima kasih sudah order ❤️`;
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(adminMsg)}`,
+      "_blank"
+    );
+
+    window.open(
+      `https://wa.me/${phone}?text=${encodeURIComponent(customerMsg)}`,
+      "_blank"
+    );
+
+    await fetch(API_URL,{
+      method:"POST",
+      body:JSON.stringify({
+        action:"reduceStock",
+        items:cart
+      })
+    });
+
+    cart = [];
+
+    renderCart();
+    renderOrders();
+    loadMenu();
+
+    alert("Pesanan berhasil dikirim.");
+
+window.location.href =
+window.location.pathname;
+
+  } catch(err) {
+
+    console.error(err);
+    alert("Gagal mengirim pesanan.");
+
+  } finally {
+
+    hideLoading();
+
+    if(btn){
+      btn.disabled = false;
+      btn.innerHTML = "Kirim Pesanan via WhatsApp";
+    }
+
+  }
+
+}
+
+// ================= ADMIN =================
+async function addMenu() {
+  const category = document.getElementById("newCategory").value;
+  const name = document.getElementById("newName").value.trim();
+  const price = parseInt(document.getElementById("newPrice").value);
+  const stock = parseInt(document.getElementById("newStock").value);
+  const image = document.getElementById("newImage").value.trim();
+
+  if (!name || isNaN(price) || isNaN(stock)) {
+    return alert("Isi nama, harga, dan stok.");
+  }
+
+  await fetch(API_URL,{
+  method:"POST",
+  body:JSON.stringify({
+    action:"addMenu",
+    name,
+    category,
+    price,
+    stock,
+    image
+  })
+});
+
+await loadMenu();
+
+  renderMenu();
+  renderAdmin();
+
+  document.getElementById("newName").value = "";
+  document.getElementById("newPrice").value = "";
+  document.getElementById("newStock").value = "";
+  document.getElementById("newImage").value = "";
+
+  alert("Menu berhasil ditambahkan.");
+}
+
+async function updateStock(index, amount) {
+
+  const item = menu[index];
+
+  await fetch(API_URL,{
+    method:"POST",
+    body:JSON.stringify({
+      action:"updateStock",
+      name:item.name,
+      amount:amount
+    })
+  });
+
+  await loadMenu();
+
+  renderAdmin();
+}
+
+async function deleteMenu(index) {
+
+  if (!confirm("Hapus menu ini?")) return;
+
+  const item = menu[index];
+
+  await fetch(API_URL,{
+    method:"POST",
+    body:JSON.stringify({
+      action:"deleteMenu",
+      name:item.name
+    })
+  });
+
+  await loadMenu();
+
+  renderAdmin();
+
+  alert("Menu berhasil dihapus");
+}
+
+function renderAdmin() {
+  const adminTable = document.getElementById("adminTable");
+  adminTable.innerHTML = "";
+
+  menu.forEach((item, index) => {
+    adminTable.innerHTML += `
+      <tr>
+        <td class="border p-2">
+          <div class="flex items-center gap-3">
+            <img src="${item.image}" class="w-12 h-12 object-cover rounded" />
+            <span>${item.name}</span>
+          </div>
+        </td>
+
+        <td class="border p-2">Rp ${formatRupiah(item.price)}</td>
+
+        <td class="border p-2 text-center">${item.stock}</td>
+
+        <td class="border p-2">
+          <div class="flex flex-wrap gap-2">
+            <button onclick="updateStock(${index}, 1)"
+              class="bg-green-600 text-white px-2 py-1 rounded">+1</button>
+
+            <button onclick="updateStock(${index}, -1)"
+              class="bg-yellow-500 text-white px-2 py-1 rounded">-1</button>
+
+            <button onclick="deleteMenu(${index})"
+              class="bg-red-600 text-white px-2 py-1 rounded">Hapus</button>
+          </div>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+function renderChat() {
+  // fitur chat belum digunakan
+  return;
+}
+
+function normalizePhone(num){
+
+  if(num === null || num === undefined){
+    return "";
+  }
+
+  num = String(num).trim();
+
+  num = num.replace(/\D/g, "");
+
+  if(num.startsWith("0")){
+    num = "62" + num.slice(1);
+  }
+
+  if(!num.startsWith("62")){
+    num = "62" + num;
+  }
+
+  return num;
+}
+
+function chatCustomer(phone){
+  if(!phone) return alert("Nomor customer tidak ada");
+
+  window.open(
+    `https://wa.me/${normalizePhone(phone)}`,
+    "_blank"
+  );
+}
+
+function showOrderPage(page){
+
+  const activePage =
+    document.getElementById("activePage");
+
+  const donePage =
+    document.getElementById("donePage");
+
+  if(page === "active"){
+
+    activePage.style.display = "block";
+    donePage.style.display = "none";
+
+  }else{
+
+    activePage.style.display = "none";
+    donePage.style.display = "block";
+
+  }
+
+}
+
+function validateCheckoutForm(){
+
+  const method =
+    document.getElementById("orderMethod").value;
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("customerPhone").value.trim();
+
+  const address =
+    document.getElementById("customerAddress")?.value.trim() || "";
+
+  const btn =
+    document.getElementById("checkoutBtn");
+
+  let valid = false;
+
+  if(method === "Ambil Nanti"){
+
+    valid =
+      name !== "" &&
+      phone.length >= 10 &&
+      cart.length > 0;
+
+  }
+
+  if(method === "Dikirim"){
+
+    valid =
+      name !== "" &&
+      phone.length >= 10 &&
+      address !== "" &&
+      cart.length > 0;
+
+  }
+
+  btn.disabled = !valid;
+
+  if(valid){
+
+    btn.classList.remove(
+      "bg-gray-400",
+      "cursor-not-allowed"
+    );
+
+    btn.classList.add(
+      "bg-green-600",
+      "hover:bg-green-700"
+    );
+
+  }else{
+
+    btn.classList.remove(
+      "bg-green-600",
+      "hover:bg-green-700"
+    );
+
+    btn.classList.add(
+      "bg-gray-400",
+      "cursor-not-allowed"
+    );
+
+  }
+
+}
+
+// ================= INIT =================
+loadConfig();
+loadMenu();
+loadOrders();
+
+renderCart();
+renderChat();
+
+updateStoreStatus();
+
+setInterval(() => {
+
+  if(
+    sessionStorage.getItem(
+      "adminLoggedIn"
+    ) === "true"
+  ){
+    loadOrders();
+  }
+
+},5000);
+
+setInterval(updateStoreStatus, 30000); // update tiap 30 detik
+
+if (sessionStorage.getItem("adminLoggedIn") === "true") {
+
+  document
+    .getElementById("adminSection")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("adminLoginBox")
+    .classList.add("hidden");
+
+  renderAdmin();
+
+  showOrderPage("active");
+
+}
+
+function toggleOrderForm(){
+
+  const method =
+    document.getElementById("orderMethod").value;
+
+  const form =
+    document.getElementById("customerForm");
+
+  const addressBox =
+    document.getElementById("addressBox");
+
+  if(method){
+
+    form.style.display = "block";
+
+    if(method === "Dikirim"){
+      addressBox.style.display = "block";
+    }else{
+      addressBox.style.display = "none";
+    }
+
+  }else{
+
+    form.style.display = "none";
+    addressBox.style.display = "none";
+
+  }
+validateCheckoutForm();
+}
+
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, "0");
+  const m = String(now.getMinutes()).padStart(2, "0");
+  const s = String(now.getSeconds()).padStart(2, "0");
+
+  document.getElementById("liveClock").innerText = `${h}:${m}:${s}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+function showLoading(text="Loading..."){
+
+  let el = document.getElementById("loadingBox");
+
+  if(!el){
+
+    el = document.createElement("div");
+    el.id = "loadingBox";
+
+    el.innerHTML = `
+      <div style="
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.6);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        z-index:99999;
+      ">
+        <div style="
+          background:#fff;
+          padding:20px 30px;
+          border-radius:12px;
+          font-weight:bold;
+        ">
+          <span id="loadingText">${text}</span>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(el);
+
+  }
+
+}
+
+function hideLoading(){
+
+  const el = document.getElementById("loadingBox");
+
+  if(el){
+    el.remove();
+  }
+
+}
+
+window.addEventListener("load", () => {
+
+  document.getElementById("customerName")
+    ?.addEventListener("input", validateCheckoutForm);
+
+  document.getElementById("customerPhone")
+    ?.addEventListener("input", validateCheckoutForm);
+
+  document.getElementById("customerAddress")
+    ?.addEventListener("input", validateCheckoutForm);
+
+  document.getElementById("orderMethod")
+    ?.addEventListener("change", validateCheckoutForm);
+
+});
+
+</script>
+
+<!-- WATERMARK -->
+<div class="fixed bottom-3 right-3 z-50 opacity-70">
+  <div class="bg-black text-white text-xs px-3 py-1 rounded-full shadow-lg">
+    ByIlhom
+  </div>
+</div>
+</body>
+</html>
